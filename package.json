@@ -1,0 +1,26 @@
+{
+  "name": "how8_api",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jaobaitas/HoW8_Api.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jaobaitas/HoW8_Api/issues"
+  },
+  "homepage": "https://github.com/jaobaitas/HoW8_Api#readme",
+  "dependencies": {
+    "@google-cloud/firestore": "^7.1.0",
+    "express": "^4.18.2",
+    "firebase-admin": "^11.11.0"
+  }
+}
