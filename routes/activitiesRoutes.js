@@ -3,10 +3,7 @@ const router = express.Router();
 const admin = require('firebase-admin');
 
 // Inicialize o Firebase Admin com as credenciais do seu projeto Firebase
-admin.initializeApp({
-  credential: admin.credential.cert('caminho-para-suas-credenciais.json'),
-  databaseURL: 'https://seu-projeto.firebaseio.com',
-});
+
 
 // Referência ao Firestore
 const db = admin.firestore();

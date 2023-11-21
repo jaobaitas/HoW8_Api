@@ -2,14 +2,12 @@ const express = require('express');
 const router = express.Router();
 const admin = require('firebase-admin');
 
-// Inicialize o Firebase Admin com as credenciais do seu projeto Firebase
-admin.initializeApp({
-  credential: admin.credential.cert('caminho-para-suas-credenciais.json'),
-  databaseURL: 'https://seu-projeto.firebaseio.com',
-});
+console.log('Entrou no registerRoutes.js');
 
 router.post('/register', async (req, res) => {
+  console.log('Rota de registro acessada'); // Verifique se a rota está sendo acessada
   const { email, password } = req.body;
+  console.log('Email:', email); // Verifique se os dados da requisição estão chegando corretamente
 
   try {
     // Lógica de registro aqui
