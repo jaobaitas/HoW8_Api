@@ -5,13 +5,16 @@ const admin = require('firebase-admin');
 console.log('Entrou no registerRoutes.js');
 
 router.post('/register', async (req, res) => {
-  console.log('Rota de registro acessada'); // Verifique se a rota está sendo acessada
-  const { email, password } = req.body;
-  console.log('Email:', email); // Verifique se os dados da requisição estão chegando corretamente
+  console.log('Rota de registro acessada');
+  const { email, password, confirmPassword } = req.body;
+  console.log('Email:', email);
+
+  // Verificar se as senhas coincidem
+  if (password !== confirmPassword) {
+    return res.status(400).json({ message: 'As senhas não coincidem' });
+  }
 
   try {
-    // Lógica de registro aqui
-    // Crie um novo usuário no Firebase Authentication
     const userRecord = await admin.auth().createUser({
       email: email,
       password: password,
